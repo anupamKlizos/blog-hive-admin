@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <!-- Quill library -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+                
+</head>
+</head>
+
+<body>
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
+        <div class="border-end" id="sidebar-wrapper">
+            <div class="sidebar-heading border-bottom p-3 fw-bold text-center shadow-sm">
+                <a href="#">
+                    <img src="./assets/image/logo.png" class="d-logo" alt="">
+                    <img src="./assets/image/logo-short.png" class="d-short-logo" alt="">
+                </a>
+            </div>
+            <div class="list-group list-group-flush">
+                <a href="index.html" class="sidebar-link"><i class="bi bi-speedometer2"></i> <span>Dashboard</span></a>
+                <a href="post.html" class="sidebar-link active"><i class="bi bi-file-post"></i> <span> Posts</span></a>
+                <a href="category.html" class="sidebar-link"><i class="bi bi-tags"></i> <span>Category</span></a>
+                <a href="user.html" class="sidebar-link "><i class="bi bi-people"></i> <span>Users</span></a>
+                <a href="setting.html" class="sidebar-link"><i class="bi bi-gear"></i> <span>Settings</span></a>
+            </div>
+        </div>
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                <div class="container-fluid">
+                    <button class="btn" id="sidebarToggle">
+                        <i class="bi bi-list"></i>
+                    </button>
+                    <div class="ms-auto right-info">
+                        <div class="notification">
+                            <i class="fa-solid fa-bell"></i>
+                        </div>
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-bs-toggle="dropdown">
+                                <span class="profile-image"><img src="./assets/image/blog_5.jpg" alt=""></span>
+                                <div class="us-info">
+
+                                    <h4>Austin Robertson</h4>
+                                    <p>Marketing Administrator</p>
+                                </div>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> Profile</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right"></i>
+                                        Logout</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container-fluid p-4">
+                
+                <!-- Recent Posts Table -->
+                <div class="pb-3 mt-4 mb-4 d-flex justify-content-between align-items-center">
+                    <h5 class="text-capitalize  card-title  text-secondary">Add New Post</h5>
+                </div>
+                <div class="card-body mb-4 shadow p-4 border-0">
+                    <div class="form-body">
+                        <form>
+                            <div class="row">
+                                <div class="col-10">
+                                    <div class="mb-3 form-group">
+                                        <label for="title" class="form-label">Title</label>
+                                        <input type="text" class="form-control" id="title">
+                                        <p id="titleError" class="error"></p>
+                                    </div>
+        
+                                    <div class="mb-3 form-group">
+                                        <label for="description" class="form-label">Description</label>
+                                        <input type="text" class="form-control" id="description">
+                                        <p id="descriptionError" class="error"></p>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <img src="./assets/image/empty-image.png" class="show-image" alt="">
+                                </div>
+                            </div>
+
+                            <div class="mb-3 form-group">
+                                <label for="image" class="form-label">Featured Image</label>
+                                <input type="file" class="form-control" id="image">
+                                <p id="imageError" class="error"></p>
+                            </div>
+
+                            <div class="mb-3 form-group">
+                                <label for="editor" class="form-label">Text Content</label>
+                                <div id="editor" style="height: 200px;"></div>
+                            </div>
+            
+                            <div class="mb-3 form-group">
+                                <label for="category" class="form-label">Category</label>
+                                <select class="form-select" aria-label="Default select category">
+                                    <option selected>selecte category</option>
+                                    <option value="admin">Admin</option>
+                                    <option value="user">User</option>
+                                </select>
+                            </div>
+            
+                            <div class="mb-3 form-group">
+                                <label for="category" class="form-label">Status</label>
+                                <select class="form-select" aria-label="Default select status">
+                                    <option selected>selecte status</option>
+                                    <option value="active">Active</option>
+                                    <option value="inactive">inactive</option>
+                                </select>
+                            </div>
+            
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+            <footer>
+                <div class="container">
+                    <div class="row justify-content-center py-4">
+                        <p>Designed By Themefisher &amp; Developed By Gethugothemes</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script>
+        // Initialize Quill editor
+        var quill = new Quill('#editor', {
+            theme: 'snow', // Specify theme in options
+            modules: {
+                toolbar: [
+                    ['bold', 'italic', 'underline'],        // toggled buttons
+                    ['link', 'image'],                       // link and image
+                    [{ list: 'ordered' }, { list: 'bullet' }] // lists
+                ]
+            }
+        });
+    </script>
+  
+</body>
+</html>
